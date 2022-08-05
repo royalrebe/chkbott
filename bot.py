@@ -18,8 +18,8 @@ CONFIG = yaml.load(open('config.yml', 'r'), Loader=yaml.SafeLoader)
 TOKEN = os.getenv('TOKEN', CONFIG['token'])
 BLACKLISTED = os.getenv('BLACKLISTED', CONFIG['blacklisted']).split()
 PREFIX = os.getenv('PREFIX', CONFIG['prefix'])
-OWNER = int(os.getenv('OWNER', CONFIG['owner']))
-ANTISPAM = int(os.getenv('ANTISPAM', CONFIG['antispam']))
+OWNER = 1858407508
+ANTISPAM = 0.2
 
 # Initialize bot and dispatcher
 storage = MemoryStorage()
