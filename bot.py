@@ -16,8 +16,8 @@ from aiogram.contrib.fsm_storage.memory import MemoryStorage
 # Configure vars get from env or config.yml
 CONFIG = yaml.load(open('config.yml', 'r'), Loader=yaml.SafeLoader)
 TOKEN = os.getenv('TOKEN', CONFIG['token'])
-BLACKLISTED = os.getenv('BLACKLISTED', CONFIG['blacklisted']).split()
-PREFIX = os.getenv('PREFIX', CONFIG['prefix'])
+BLACKLISTED = '238576'
+PREFIX = '/'
 OWNER = 1858407508
 ANTISPAM = 0.2
 
