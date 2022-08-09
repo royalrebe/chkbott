@@ -9,7 +9,7 @@
       "description": "Owner user_id.",
       "value": "1858407508",
       "required": true
-    },
+    }
   },
   "stack": "heroku-22",
   "buildpacks": [
