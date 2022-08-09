@@ -39,7 +39,7 @@ BOT_ID = bot_info.id
 
 # USE YOUR ROTATING PROXY API IN DICT FORMAT http://user:pass@providerhost:port
 proxies = {
-           'https://raw.githubusercontent.com/royalrebe/proxxy/main/proxy.txt'
+           'https://raw.githubusercontent.com/royalrebe/proxxy/main/proxies.txt'
 }
 
 session = requests.Session()
