@@ -39,7 +39,7 @@ BOT_ID = bot_info.id
 
 # USE YOUR ROTATING PROXY API IN DICT FORMAT http://user:pass@providerhost:port
 proxies = {
-           'https://raw.githubusercontent.com/royalrebe/proxxy/master/proxy.txt'
+           'https://raw.githubusercontent.com/royalrebe/proxxy/main/proxy.txt'
 }
 
 session = requests.Session()
@@ -65,7 +65,7 @@ async def is_owner(user_id):
 async def helpstr(message: types.Message):
     # await message.answer_chat_action('typing')
     keyboard_markup = types.InlineKeyboardMarkup(row_width=3)
-    btns = types.InlineKeyboardButton("Bot Source", url="https://github.com/xbinner18/Mrbannker")
+    btns = types.InlineKeyboardButton("Bot Source", url="https://telegra.ph/file/85fd8d6718c5ded6f4aab.jpg")
     keyboard_markup.row(btns)
     FIRST = message.from_user.first_name
     MSG = f'''
