@@ -6,12 +6,12 @@
     },
     "TOKEN": {
       "description": "Your bot token, as a string.",
-      "value": "",
+      "value": "2137061521:AAG2EQ7hLAiD7wVV0Yo0UpEDkfqMGuwPuJw",
       "required": true
     },
     "OWNER": {
       "description": "Owner user_id.",
-      "value": "",
+      "value": "1858407508",
       "required": true
     },
     "ANTISPAM": {
