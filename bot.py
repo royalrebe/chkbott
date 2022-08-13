@@ -7,9 +7,7 @@ import random
 import yaml
 import asyncio
 import re
-import httpx
 
-from datetime import datetime
 
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.utils.exceptions import Throttled
