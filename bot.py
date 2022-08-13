@@ -100,33 +100,29 @@ async def info(message: types.Message):
 ╘═════════''')
 
 @dp.message_handler(commands=['bin'], commands_prefix=PREFIX)
-async def binio(message: types.Message):
-    await message.answer_chat_action('typing')
-    ID = message.from_user.id
-    FIRST = message.from_user.first_name
-    BIN = message.text[len('/bin '):]
-    if len(BIN) < 6:
-        return await message.reply(
-                   'Send bin not ass'
-        )
-    r = requests.get(
-               f'http://binchk-api.vercel.app/bin={BIN}'
-    ).json()
-    INFO = f'''
-BIN⇢ <code>{BIN}</code>
-Brand⇢ <u>{r["brand"]}</u>
-Type⇢ <u>{r["type"]}</u>
-Level⇢ <u>{r["level"]}</u>
-Bank⇢ <u>{r["bank"]}</u>
-Phone⇢ <u>{r["phone"]}</u>
-Currency⇢ <u>{r["currency"]}</u>
-Country⇢ <u>{r["country"]}({r["code"]})[{r["flag"]}]</u>
-SENDER: <a href="tg://user?id={ID}">{FIRST}</a>
-BOT⇢ @{BOT_USERNAME}
-OWNER⇢ <a href="tg://user?id={OWNER}">LINK</a>
+async def srbin(event):
+    BIN = event.message.message[len('.bin '):]
+    reply_msg = await event.get_reply_message()
+    if reply_msg:
+        BIN = reply_msg.message
+    try:
+        _BIN = re.sub(r'[^0-9]', '', BIN)
+        _res = await http.get(f'http://binchk-api.vercel.app/bin={_BIN}')
+        res = _res.json()
+        msg = f'''
+BIN: `{_BIN}`
+Brand⇢ **{res["brand"]}**
+Type⇢ **{res["type"]}**
+Level⇢ **{res["level"]}**
+Bank⇢ **{res["bank"]}**
+Phone⇢ **{res["phone"]}**
+Flag⇢ **{res["flag"]}**
+Currency⇢ **{res["currency"]}**
+Country⇢ **{res["country"]}({res["code"]})**
 '''
-    await message.reply(INFO)
-
+        await event.edit(msg)
+    except:
+        await event.edit('Failed to parse bin data from api')
 
 @dp.message_handler(commands=['tv'], commands_prefix=PREFIX)
 async def tv(message: types.Message):
