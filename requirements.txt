@@ -2,3 +2,7 @@ aiogram
 requests
 PyYAML
 httpx[http2]
+telethon
+cryptg
+emoji-country-flag
+bs4
