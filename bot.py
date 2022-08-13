@@ -99,7 +99,6 @@ async def info(message: types.Message):
 <b>BOT-OWNER:</b> {await is_owner(user_id)}
 ╘═════════''')
 
-
 @dp.message_handler(commands=['bin'], commands_prefix=PREFIX)
 async def binio(message: types.Message):
     await message.answer_chat_action('typing')
